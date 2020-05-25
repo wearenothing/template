@@ -1,18 +1,9 @@
 #include<iostream>
 #include<vector>
 #include<iterator>
+#include<algorithm>
+#include<functional>
 using namespace std;
-template<class bili>
-class nnegate
-{
-	public:
-		bili operator() (bili& t){
-			return -t;
-		};
-};
-
-template<class IntputIterator,class OutputIterator,class UnaryFunction >
-OutputIterator transform(IntputIterator first, IntputIterator last, OutputIterator result, UnaryFunction op);
 int main(){
 	const int N=5;
 	vector<int> S(N);
@@ -22,11 +13,5 @@ int main(){
 	return 0;
 }
 
-template<class IntputIterator,class OutputIterator,class UnaryFunction >
-OutputIterator transform(IntputIterator first, IntputIterator last, OutputIterator result, UnaryFunction op)
-{
-	for(;first!=last;++first,++result)
-	*result=op(*first);
-	return result;
-}
+
 
